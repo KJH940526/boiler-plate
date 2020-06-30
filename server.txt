@@ -1,0 +1,7 @@
+clinet 에서 정보를 보내면 server에서 받는다.
+
+Body-parser 디펜던시를 통해서 clinet가 주는 데이터를
+server에서 받을수 있다.
+
+https://velog.io/@yejinh/express-%EB%AF%B8%EB%93%A4%EC%9B%A8%EC%96%B4-bodyParser-%EB%AA%A8%EB%93%88
+

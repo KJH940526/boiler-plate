@@ -10,17 +10,51 @@
 //Model은 Schema를 감싸주는 역할
 //Schema는 하나하나의 정보를 지정한다.
 
+
+
 const express = require("express");
 const app = express();
 const port = 5000;
+const bodyParser = require('body-parser');
+
+const config = require("./config/key")
+
+const { User } = require("./models/User");
+
+
+
+//가져오는 정보를 분석해서 가져올수 있게 한다.
+app.use(bodyParser.urlencoded({extended: true}));
+
+//json 타입으로 된것을 분석해서 가져온다.
+app.use(bodyParser.json());
+
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://JWTEX:TIGER@jwt-rkkz2.mongodb.net/<dbname>?retryWrites=true&w=majority',{
+mongoose.connect(config.mongoURI,{
    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(()=> console.log("DB Connected..."))
   .catch(err => console.log(err))
 
 
 app.get('/',(req,res)=> res.send("Hi"))
+
+app.post('/register',(req,res)=> {
+  //회원가입할떄 필요한 정보들을 client에서 가져오면
+  //그것을들 데이터 베이스에 넣어준다.
+
+  //req.body 안에는 json 형식으로 들어있다.
+    const user = new User(req.body)
+  //save는 몽고db에서 오는 메소드
+    user.save((err, userInfo)=>{
+      if(err) return res.json({ success: false, err})
+      return res.status(200).json({
+        success: true
+      })
+    })
+})
+
+
+
 
 app.listen(port, ()=>console.log(`on port http://localhost:${port}/`));
 
