@@ -45,9 +45,14 @@ https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-
 
 를 통해서 ssh key를 git hub account에 올린다.
 
+git hub에 푸쉬하는법 push
+git remote add origin https://github.com/KJH940526/boiler-plate.git 깃허브 레파지토리 위치저장
+git push -u origin master 
 
+// 그 이후부터
 
-
-
+git add .
+git commit -m "깃내용"
+git push -u origin master
 
 
