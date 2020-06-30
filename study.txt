@@ -22,3 +22,32 @@ git에 모듈이 올라갔을 경우 git rm --cached node_modules -r을 사용�
 
 git에 있는 모듈을 제거한다.
 
+git commit -m "처음 저장소에 올림" 을 통해서 깃 로컬저장소에 올라감.
+
+SSH(Secure Shell)를 이용해 git을 git hub에 연결하기!  
+
+git push를 이용해서 git hub에 올리기
+
+ssh 설정 방법!
+
+ssh key를 만들기 위해서 https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+를 들어간다. 
+                                                //git hub 이메일 
+git bash를 열고 ssh-keygen -t rsa -b 4096 -C "enddl0121@naver.com" 을 입력한다. 
+
+SSH Agent를 background에 킨다 
+
+$ # start the ssh-agent in the background
+$ eval $(ssh-agent -s) 를 치면 Agent pid값이 나온다.
+
+https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+를 통해서 ssh key를 git hub account에 올린다.
+
+
+
+
+
+
+
