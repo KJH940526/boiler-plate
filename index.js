@@ -111,7 +111,7 @@ app.get('/api/users/auth', auth, (req, res)=>{
 //로그아웃은 로그인된 상태이기 떄문에 auth 미들웨어를 사용해야한다.
 app.get('/api/users/logout', auth, (req, res) => {
   console.log('req.user', req.user)
-  User.findByIdAndDelete({_id: req.user._id},
+  User.findByIdAndUpdate({_id: req.user._id},
     {token:""} //토큰을 지워줌
    , (err, user) => {
      //에러가 생겼을떄
