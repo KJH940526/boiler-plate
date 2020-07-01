@@ -1,3 +1,27 @@
+환경설정
+
+{ "emmet.includeLanguages": { "javascript": "javascriptreact" } }
+
+ctrl+, 해서 설정 들어가서
+1.작업영역(WorkSpace setting)
+2.Include Languages > setting.json 편집 클릭
+3. 위 텍스트 복사 붙여넣기
+
+div>form>(labe+index)*2 이런식으로 쓰고 tab 누르면
+
+<div>
+      <form action="">
+        <labe></labe>
+        <index></index>
+        <labe></labe>
+        <index></index>
+      </form>
+    </div>
+
+
+
+
+
 git!! 
 
 git --version 으로 다운로드 확인
@@ -81,3 +105,28 @@ hoc-> Higher Order Component의 약자로 설명은 위에..
 
 utils 여러 군데에서 쓰일수 있는 것들을 이 폴더에 넣어서 어디서든
 꺼내 쓸수 있게 하기 위함
+
+
+
+
+//22장
+CORS 이슈, Proxy 설정
+Cross-Origin Resource Sharing (CORS)보안을 위해서 접속이 막히는데
+을 해결하기 위해서 Proxy 설정을 해야한다.
+그러기 위해서는 추가로 모듈을 설치해줘야한다.
+npm install http-proxy-middleware --save
+https://create-react-app.dev/docs/proxying-api-requests-in-development/
+
+
+//23장
+Porxy Server
+1)IP를 Proxy Server에서 임의로 바꿔 버릴수 있다.
+그래서 인터넷에서 접근하는 사람의 IP를 모르게 된다.
+2) 보내는 데이터를 임의로 바꿀수 있다.
+
+--> 사용하는 이유 EX) 방화벽기능, 웹필터 기능, 캐쉬데이터, 공유데이터 제공
+자세한건 추가공부
+
+
+//24장 Concurrently를 이용해서를 이용해서 프론트, 백서버 한번에 켜기
+npm install concurrently --save

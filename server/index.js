@@ -46,7 +46,7 @@ mongoose.connect(config.mongoURI,{
 app.get('/',(req,res)=> res.send("Hi"))
 
 
-//여기서 받은다음에
+//여기서 요청을 받은다음에 다시 보내준다.
 app.get('/api/hello',(req,res)=> {
   res.send("안녕하세요~") //res 다시 프론트로 보냄
 })
