@@ -130,3 +130,90 @@ Porxy Server
 
 //24장 Concurrently를 이용해서를 이용해서 프론트, 백서버 한번에 켜기
 npm install concurrently --save
+root디렉토리에 있는 package.json의 script에
+ "dev": " concurrently \"npm run backend\" \"npm run start --prefix client\" "를 
+ 추가한다.
+
+
+ // 25장 CSS Framwork
+CSS Framwork 종류 for React js
+1. Material UI
+2. React Bootstrap
+3. Semantic UI
+4. Ant Design(Antd)  -- 이번 강의에서 사용할것 /// 단점: 용량이 큼 // 장점: 쓰기 편한고, 스타일이 깔끔하다.
+5. Materialize
+//리액터의 디펜더시 이기 떄문에 클라이언트로 간다
+npm install antd --save
+client/src/index.js에서 import 'antd/dist/antd.css'를 import 시켜준다
+
+
+//26장 Redux 기초
+Redux is a predictable state container for JavaScript apps.
+(상태 관리 라이브러리)
+
+Props와 State 비교하기
+
+Props는 properties의 줄임말
+부모 컴포넌트가 있고 자식컴포넌트가 있을 떄 컴포넌트 간의 무언가를 주고 받을때는 
+Props를 써야하고, Props의 소통하는 방식은 위에서 아래로 
+즉, 부모컴포넌트에서 자식컴포넌트 로만 전송이 가능하다.
+부모컴포넌트에서 자식컴포넌트로 1이라는 값을 줬을때 자식컴포넌트 안에서는 props는 변할수 없다.
+props는 읽기전용이다.
+
+State는 부모컴포넌트에서 자식컴포넌트로 주는게 아니고,
+컴포넌트 안에서 데이터를 교환하거나 전달을 할 떄 state를 사용해야한다.
+state를 언제든지 변할수 있다. state가 변하면 re-render가 된다.
+
+Redux는 State를 관리하는 것
+
+Redux 데이터 Flow(stric unidirectional data flow) 한방향으로 데이터가 흐른다.
+React Component -> Dispatch(action) -> Action -> REDUCER -> STORE -> Subscribe -> 다시 React Component로 간다.
+
+Action은 객체로 이루어져있는데 무엇이 일어났는지 설명하는 객체이다.
+//동영상 7분 10초
+
+Reducer는 이전 State와 Action object를 받은 후에 next state를 return 한다.
+
+Store는 state를 저장하고 관리한다. 
+store의 state를 변경하기 위해서는 반드시 Dispatch를 이용한 Redux 데이터 Flow를 통해서만
+변경이 가능하다.
+
+
+
+
+//Redux UP!! 27강
+React에서 사용하기 위해서 Client(리액트) 터미널로 가서
+npm install redux react-redux redux-promise redux-thunk --save 를 설치한다.
+redux-promise 
+redux-thunk
+
+//2분 18초 다시 한번 들어보기
+Action은 객체형식이여야 한다. 그래야 STORE에서 받을수 있는데, 
+항상 객체형식을 받는게 아니라 promise형식이나 funcion을 받을때도 있다.
+redux-promise와 redux-thunk를 미들웨이로로 받아서 전달한다.
+redux-thunk는 funcion을 받을수 있게해주고,
+redux-promise를 promise를 받을수 있게해준다.
+
+
+//28강 React Hooks(다시 듣기)
+Class Component는 제공하는 기능이 많고, 코드가 길어지고, 복잡해지고, 속도가 느려진다.
+Funcion Component는 제공하는 기능이 적고, 코드가 줄어들고, 간결해지며, 속도가 빨라진다.
+
+Class Component를 이용할 때 
+Mounting과정에서 constructor -> render -> componentDidMount 과정이 일어나고,
+Updating에서는 render -> componentDidUpdate의 과정이 일어나고,
+Unmounting과정에서는 componentWillUnMount 과정이 일어난다.
+따라서 Class 컴포넌트를 이용하다가
+react hooks가 업데이트가 되고나서 Class Component에서만 제공된 기능들인
+라이프사이클, setState 같은것을 함수형 컴포넌트에서도 사용이 가능해졌다.
+
+class형 component에서는 constructor를 통해서 state를 생성하고, 여러 기능을 통해 변경하였으나
+react-hooks의 useState를 통해서 state의 변경 및 생성이 가능해졌다.
+
+
+componentDidMount(페이지가 생성될 떄)를 이용해서 데이터를 가져오거나 여러가지 기능을 했으나,
+hook의 useEffect를 이용해서 똑같이 사용이 가능해졌다.
+
+//29강 로그인 페이지 만들기
+Formik과 Yup이란 라이브러리를 사용해서 좀 더 다이나믹하게 만들수 있다.
+

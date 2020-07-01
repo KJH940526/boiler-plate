@@ -101,6 +101,8 @@ app.post('/api/users/login', (req, res)=> {
   })
 })
 
+
+
 // role 0 -> 일반유저 role이 0이 아니면 관리자
 //ex) role 1 -> 어드민 , role 2 => 특정 부서 어드민
 
