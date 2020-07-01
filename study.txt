@@ -56,3 +56,28 @@ git commit -m "깃내용"
 git push -u origin master
 
 
+---19강
+hoc는 컴포넌트안에 있는 함수로 다른 컴포넌트를 가지는 함수
+            //자격 -> 함수 함수에 따라 다른것도 가능
+ex) hoc에서 자격이 되면 관리자 페이지로 보내고 아니면 다른 페이지로 보낸다.
+ex) 로그인된 사람만 들어오고 아니면 다른 페이지로 보낸다.
+
+--확장프로그램 es7치면 나오는 react 추가 확장프로그램 설치하기
+--rfce로 함수형 컴포넌트 만들기
+
+//boiler plate react 구조 설명
+_actions, _reducers => Redux를 위한 폴더들
+
+components/views -> 이 안에 Page들을 넣는다.
+
+components/views/Sections => 이 안에는 해당 페이지에 
+관련된 css파일이나, component 들을 넣는다.
+
+App.js Routring 관련 일을 처리한다.
+Config.js 환경 변수같은 것들을 정하는 곳이다.
+
+hoc-> Higher Order Component의 약자로 설명은 위에..
+자세한건 따로 공부하기
+
+utils 여러 군데에서 쓰일수 있는 것들을 이 폴더에 넣어서 어디서든
+꺼내 쓸수 있게 하기 위함
