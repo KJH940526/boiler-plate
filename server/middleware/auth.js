@@ -1,5 +1,5 @@
 //User 모델 import
-const { User } = require("../models/User");
+const { User } = require('../models/User');
 
 let auth = (req, res, next) => {
 

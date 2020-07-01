@@ -18,6 +18,8 @@ const port = 5000;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 
+
+
 const config = require("./config/key")
 
 const { auth } = require("./middleware/auth")
@@ -42,6 +44,17 @@ mongoose.connect(config.mongoURI,{
 
 
 app.get('/',(req,res)=> res.send("Hi"))
+
+
+//여기서 받은다음에
+app.get('/api/hello',(req,res)=> {
+  res.send("안녕하세요~") //res 다시 프론트로 보냄
+})
+
+
+
+
+
 
 app.post('/api/users/register',(req,res)=> {
   //회원가입할떄 필요한 정보들을 client에서 가져오면
