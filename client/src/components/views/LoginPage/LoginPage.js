@@ -33,6 +33,7 @@ function LoginPage(props) {
     dispatch(loginUser(body))
       .then(response => {         
         if(response.payload.loginSuccess){
+          alert("로그인에 성공하였습니다.")
           props.history.push('/') //리액트에서 페이지를 옮길때는 이런방식으로 간다.
         } else {                    //props는 line 5에서 받은 props이다
           alert('Error')
