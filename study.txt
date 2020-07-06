@@ -237,3 +237,10 @@ HOC는 함수이다. 함수지만 다른 컴포넌트를 받은 다음에 새로
 Auth(HOC)는 Backend 서버에 요청(request)을 보내고 상태정보를 가지고 Auth(HOC)로 가지고 온다.
 상태정보는 로그인유저인지, 관리자인지 같은 것을 의미한다.
 
+
+실행시 다음과 같은 경고문이 뜨는데? 이에 대해서는 다음에 알아보기
+
+[1] i ｢wds｣: Project is running at http://0.0.0.0:3000/
+[1] i ｢wds｣: webpack output is served from
+[1] i ｢wds｣: Content not from webpack is served from C:\Users\82103\Desktop\jwtlecture\client\public
+[1] i ｢wds｣: 404s will fallback to /
