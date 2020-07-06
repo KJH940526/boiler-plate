@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 const mongoose = require("mongoose");
-mongoose
+mongoose //config는 mongoURI가 들어있음 Import 함
   .connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
