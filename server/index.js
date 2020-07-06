@@ -55,6 +55,7 @@ app.post("/api/users/register", (req, res) => {
   //req.body 안에는 json 형식으로 들어있다.
   const user = new User(req.body);
 
+  
   //save는 몽고db에서 오는 메소드
   user.save((err, userInfo) => {
     if (err) return res.json({ success: false, err });

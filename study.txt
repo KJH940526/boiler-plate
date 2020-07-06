@@ -35,7 +35,7 @@ git add . 으로 모든 파일을 git에 보낼 수 있다.
 
 다시 git status로 확인할 수 있다.
 
-깃 저장소에 올릴떄는 라이브러리는 보내지 않는다.
+일반반적으로 깃 저장소에 올릴떄는 라이브러리는 보내지 않는다.
 
 package.json의 dependencies를 보고 다시 install 해준다.
 
@@ -72,7 +72,15 @@ https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-
 
 git hub에 푸쉬하는법 push
 git remote add origin https://github.com/KJH940526/boiler-plate.git 깃허브 레파지토리 위치저장
-git push -u origin master 
+//fatal: remote origin already exists 라는 오류가 나올떄가 있는데
+// 이미 remote origin이 존재하기 떄문에 지워줘야 한다.
+// git remote rm origin 하면 지워진다.
+그리고 다시 
+git remote add origin https://github.com/KJH940526/boiler-plate.git 를 통해 등록하고
+
+git push -u origin master 를 통해서 push 하면 된다.
+
+
 
 // 그 이후부터
 
